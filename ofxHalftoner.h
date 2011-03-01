@@ -1,5 +1,5 @@
-#ifndef _HALFTONER_H
-#define _HALFTONER_H
+#ifndef _OFX_HALFTONER_H
+#define _OFX_HALFTONER_H
 
 #include "ofMain.h"
 const int patternW = 4;
@@ -45,7 +45,7 @@ const int fsPattern[3][3] = {{0, 0, 0},
 
 
 
-class Halftoner {
+class ofxHalfToner {
     
 	public:
 

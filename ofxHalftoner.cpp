@@ -1,14 +1,14 @@
-#include "Halftoner.h"
+#include "ofxHalfToner.h"
 
 
-unsigned char * Halftoner::fixedThreshold(const unsigned char * src, unsigned char * dst, int w, int h, int threshold){
+unsigned char * ofxHalfToner::fixedThreshold(const unsigned char * src, unsigned char * dst, int w, int h, int threshold){
     int numPx = w*h;
     for (int i = 0; i < numPx; i++) {
         dst[i] = src[i] > threshold? 255:0;
     }
 }
 
-unsigned char * Halftoner::random(const unsigned char * src, unsigned char * dst, int w, int h) {
+unsigned char * ofxHalfToner::random(const unsigned char * src, unsigned char * dst, int w, int h) {
     int numPx = w*h;
     for (int i = 0; i < numPx; i++) {
         dst[i] = src[i] > ofRandom(0,255) ? 255:0;
@@ -16,7 +16,7 @@ unsigned char * Halftoner::random(const unsigned char * src, unsigned char * dst
 
 }
 
-unsigned char * Halftoner::patterned(const unsigned char * src, unsigned char * dst, int w, int h) {
+unsigned char * ofxHalfToner::patterned(const unsigned char * src, unsigned char * dst, int w, int h) {
     for (int i = 0; i < w; i++) {
         for (int j = 0; j < h; j++) {
             if (src[j*w+i] < 64) {
@@ -32,7 +32,7 @@ unsigned char * Halftoner::patterned(const unsigned char * src, unsigned char * 
     }
 }
 
-unsigned char * Halftoner::orderedClust(const unsigned char * src, unsigned char * dst, int w, int h) {
+unsigned char * ofxHalfToner::orderedClust(const unsigned char * src, unsigned char * dst, int w, int h) {
     for (int i = 0; i < w; i++) {
         for (int j = 0; j < h; j++) {
             if (src[j*w+i]/(255/10) > clusterPattern[j%3][i%3]) {
@@ -44,7 +44,7 @@ unsigned char * Halftoner::orderedClust(const unsigned char * src, unsigned char
     }
 }
 
-unsigned char * Halftoner::orderedDisp(const unsigned char * src, unsigned char * dst, int w, int h) {
+unsigned char * ofxHalfToner::orderedDisp(const unsigned char * src, unsigned char * dst, int w, int h) {
     for (int i = 0; i < w; i++) {
         for (int j = 0; j < h; j++) {
             if (src[j*w+i]/(255/10) > dispersedPattern[j%3][i%3]) {
@@ -56,7 +56,7 @@ unsigned char * Halftoner::orderedDisp(const unsigned char * src, unsigned char 
     }
 }
 
-unsigned char * Halftoner::orderedBayer(const unsigned char * src, unsigned char * dst, int w, int h) {
+unsigned char * ofxHalfToner::orderedBayer(const unsigned char * src, unsigned char * dst, int w, int h) {
     for (int i = 0; i < w; i++) {
         for (int j = 0; j < h; j++) {
             if (src[j*w+i]/(255/5) > bayerPattern[j%2][i%2]) {
@@ -68,7 +68,7 @@ unsigned char * Halftoner::orderedBayer(const unsigned char * src, unsigned char
     }
 }
 
-unsigned char * Halftoner::floydSteinberg(const unsigned char * src, unsigned char * dst, int w, int h) {
+unsigned char * ofxHalfToner::floydSteinberg(const unsigned char * src, unsigned char * dst, int w, int h) {
 
     int oldPx = 0;
     int newPx = 0;
@@ -100,7 +100,7 @@ unsigned char * Halftoner::floydSteinberg(const unsigned char * src, unsigned ch
     }
 }
 
-unsigned char * Halftoner::atkinson(const unsigned char * src, unsigned char * dst, int w, int h) {
+unsigned char * ofxHalfToner::atkinson(const unsigned char * src, unsigned char * dst, int w, int h) {
 
     int pxPos;
     int oldPx = 0;
@@ -137,7 +137,7 @@ unsigned char * Halftoner::atkinson(const unsigned char * src, unsigned char * d
     }
 }
 
-unsigned char * Halftoner::custom	(const unsigned char * src, unsigned char * dst, int w, int h, int ** customPattern, int customPatternW, int customPatternH) {
+unsigned char * ofxHalfToner::custom	(const unsigned char * src, unsigned char * dst, int w, int h, int ** customPattern, int customPatternW, int customPatternH) {
     for (int i = 0; i < w; i++) {
         for (int j = 0; j < h; j++) {
             if (src[j*w+i]/(255/((customPatternW*customPatternH)+1)) > customPattern[j%customPatternW][i%customPatternH]) {

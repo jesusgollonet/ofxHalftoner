@@ -3,7 +3,7 @@
 
 #include "ofMain.h"
 
-#include "Halftoner.h"
+#include "ofxHalfToner.h"
 
 enum {
 	FIXEDTHRESH,

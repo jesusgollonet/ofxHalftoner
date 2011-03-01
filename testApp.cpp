@@ -72,51 +72,51 @@ void testApp::update(){
 	
 	switch (ditherType) {
 		case FIXEDTHRESH:
-			Halftoner::fixedThreshold  (pxR, fixedThresholdPxR, w, h, 100);
-			Halftoner::fixedThreshold  (pxG, fixedThresholdPxG, w, h, 100);
-			Halftoner::fixedThreshold  (pxB, fixedThresholdPxB, w, h,100);
+			ofxHalfToner::fixedThreshold  (pxR, fixedThresholdPxR, w, h, 100);
+			ofxHalfToner::fixedThreshold  (pxG, fixedThresholdPxG, w, h, 100);
+			ofxHalfToner::fixedThreshold  (pxB, fixedThresholdPxB, w, h,100);
 
 			break;
 		case RANDOM:
-			Halftoner::random  (pxR, fixedThresholdPxR, w, h);
-			Halftoner::random  (pxG, fixedThresholdPxG, w, h);
-			Halftoner::random  (pxB, fixedThresholdPxB, w, h);
+			ofxHalfToner::random  (pxR, fixedThresholdPxR, w, h);
+			ofxHalfToner::random  (pxG, fixedThresholdPxG, w, h);
+			ofxHalfToner::random  (pxB, fixedThresholdPxB, w, h);
 
 			break;
 		case PATTERN:
-			Halftoner::patterned  (pxR, fixedThresholdPxR, w, h);
-			Halftoner::patterned  (pxG, fixedThresholdPxG, w, h);
-			Halftoner::patterned  (pxB, fixedThresholdPxB, w, h);
+			ofxHalfToner::patterned  (pxR, fixedThresholdPxR, w, h);
+			ofxHalfToner::patterned  (pxG, fixedThresholdPxG, w, h);
+			ofxHalfToner::patterned  (pxB, fixedThresholdPxB, w, h);
 
 			break;
 		case ORDCLUST:
-			Halftoner::orderedClust	(pxR, fixedThresholdPxR, w, h);
-			Halftoner::orderedClust  (pxG, fixedThresholdPxG, w, h);
-			Halftoner::orderedClust  (pxB, fixedThresholdPxB, w, h);
+			ofxHalfToner::orderedClust	(pxR, fixedThresholdPxR, w, h);
+			ofxHalfToner::orderedClust  (pxG, fixedThresholdPxG, w, h);
+			ofxHalfToner::orderedClust  (pxB, fixedThresholdPxB, w, h);
 
 			break;
 		case ORDDISP:
-			Halftoner::orderedDisp  (pxR, fixedThresholdPxR, w, h);
-			Halftoner::orderedDisp  (pxG, fixedThresholdPxG, w, h);
-			Halftoner::orderedDisp  (pxB, fixedThresholdPxB, w, h);
+			ofxHalfToner::orderedDisp  (pxR, fixedThresholdPxR, w, h);
+			ofxHalfToner::orderedDisp  (pxG, fixedThresholdPxG, w, h);
+			ofxHalfToner::orderedDisp  (pxB, fixedThresholdPxB, w, h);
 
 			break;
 		case ORDBAYER:
-			Halftoner::orderedBayer  (pxR, fixedThresholdPxR, w, h);
-			Halftoner::orderedBayer  (pxG, fixedThresholdPxG, w, h);
-			Halftoner::orderedBayer  (pxB, fixedThresholdPxB, w, h);
+			ofxHalfToner::orderedBayer  (pxR, fixedThresholdPxR, w, h);
+			ofxHalfToner::orderedBayer  (pxG, fixedThresholdPxG, w, h);
+			ofxHalfToner::orderedBayer  (pxB, fixedThresholdPxB, w, h);
 
 			break;
 		case FLOYDSTEINBERG:
-			Halftoner::floydSteinberg  (pxR, fixedThresholdPxR, w, h);
-			Halftoner::floydSteinberg  (pxG, fixedThresholdPxG, w, h);
-			Halftoner::floydSteinberg  (pxB, fixedThresholdPxB, w, h);
+			ofxHalfToner::floydSteinberg  (pxR, fixedThresholdPxR, w, h);
+			ofxHalfToner::floydSteinberg  (pxG, fixedThresholdPxG, w, h);
+			ofxHalfToner::floydSteinberg  (pxB, fixedThresholdPxB, w, h);
 
 			break;
 		case ATKINSON:
-			Halftoner::atkinson (pxR, fixedThresholdPxR, w, h);
-			Halftoner::atkinson (pxG, fixedThresholdPxG, w, h);
-			Halftoner::atkinson (pxB, fixedThresholdPxB, w, h);
+			ofxHalfToner::atkinson (pxR, fixedThresholdPxR, w, h);
+			ofxHalfToner::atkinson (pxG, fixedThresholdPxG, w, h);
+			ofxHalfToner::atkinson (pxB, fixedThresholdPxB, w, h);
 
 			break;
 		case CUSTOM:
@@ -135,9 +135,9 @@ void testApp::update(){
 				}
 			}
 			*/
-			Halftoner::custom (pxR, fixedThresholdPxR, w, h, theCustomPattern, customPatternW, customPatternH);
-			Halftoner::custom (pxG, fixedThresholdPxG, w, h, theCustomPattern, customPatternW, customPatternH);
-			Halftoner::custom (pxB, fixedThresholdPxB, w, h, theCustomPattern, customPatternW, customPatternH);
+			ofxHalfToner::custom (pxR, fixedThresholdPxR, w, h, theCustomPattern, customPatternW, customPatternH);
+			ofxHalfToner::custom (pxG, fixedThresholdPxG, w, h, theCustomPattern, customPatternW, customPatternH);
+			ofxHalfToner::custom (pxB, fixedThresholdPxB, w, h, theCustomPattern, customPatternW, customPatternH);
 
 			break;
 
@@ -228,16 +228,16 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-	//Halftoner::fixedThreshold (px, fixedThresholdPx, w, h, threshold);
+	//ofxHalfToner::fixedThreshold (px, fixedThresholdPx, w, h, threshold);
     
 	/*
-	Halftoner::random         (px, randomDitherPx, w, h);
-    Halftoner::patterned      (px, patternPx, w, h);
-    Halftoner::orderedClust   (px, ordClustPx, w, h);
-    Halftoner::orderedDisp    (px, ordDispPx, w, h);
-    Halftoner::orderedBayer   (px, ordBayerPx, w, h);
-    Halftoner::floydSteinberg (px, floydSteinbergPx, w, h);
-    Halftoner::atkinson       (px, atkinsonPx, w, h);
+	ofxHalfToner::random         (px, randomDitherPx, w, h);
+    ofxHalfToner::patterned      (px, patternPx, w, h);
+    ofxHalfToner::orderedClust   (px, ordClustPx, w, h);
+    ofxHalfToner::orderedDisp    (px, ordDispPx, w, h);
+    ofxHalfToner::orderedBayer   (px, ordBayerPx, w, h);
+    ofxHalfToner::floydSteinberg (px, floydSteinbergPx, w, h);
+    ofxHalfToner::atkinson       (px, atkinsonPx, w, h);
 
     randomDitherTx.loadData     (randomDitherPx, w, h, GL_LUMINANCE);
     patternTx.loadData          (patternPx, w, h, GL_LUMINANCE);
